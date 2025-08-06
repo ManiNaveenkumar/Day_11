@@ -1,0 +1,34 @@
+digraph "pair" {
+label="pair";
+rankdir="LR";
+remincross=true;
+n5 [ shape=octagon, label="a", color="black", fontcolor="black"];
+n6 [ shape=octagon, label="n", color="black", fontcolor="black"];
+n7 [ shape=octagon, label="x", color="black", fontcolor="black"];
+c10 [ shape=record, label="{{<p8> A}|$8\n$not|{<p9> Y}}",  ];
+c13 [ shape=record, label="{{<p8> A|<p11> B|<p12> S}|$9\n$mux|{<p9> Y}}",  ];
+c14 [ shape=record, label="{{<p8> A|<p11> B}|$2\n$xor|{<p9> Y}}",  ];
+x0 [ shape=record, style=rounded, label="<s0> 0:0 - 0:0 ", color="black", fontcolor="black" ];
+x0:e -> c14:p8:w [arrowhead=odiamond, arrowtail=odiamond, dir=both, color="black", fontcolor="black", label=""];
+x1 [ shape=record, style=rounded, label="<s0> 1:1 - 0:0 ", color="black", fontcolor="black" ];
+x1:e -> c14:p11:w [arrowhead=odiamond, arrowtail=odiamond, dir=both, color="black", fontcolor="black", label=""];
+c15 [ shape=record, label="{{<p8> A|<p11> B}|$3\n$xor|{<p9> Y}}",  ];
+x2 [ shape=record, style=rounded, label="<s0> 2:2 - 0:0 ", color="black", fontcolor="black" ];
+x2:e -> c15:p11:w [arrowhead=odiamond, arrowtail=odiamond, dir=both, color="black", fontcolor="black", label=""];
+c16 [ shape=record, label="{{<p8> A|<p11> B}|$4\n$xor|{<p9> Y}}",  ];
+x3 [ shape=record, style=rounded, label="<s0> 3:3 - 0:0 ", color="black", fontcolor="black" ];
+x3:e -> c16:p11:w [arrowhead=odiamond, arrowtail=odiamond, dir=both, color="black", fontcolor="black", label=""];
+c10:p9:e -> c13:p11:w [color="black", fontcolor="black", label=""];
+c14:p9:e -> c15:p8:w [color="black", fontcolor="black", label=""];
+c15:p9:e -> c16:p8:w [color="black", fontcolor="black", label=""];
+n4 [ shape=point ];
+c16:p9:e -> n4:w [color="black", fontcolor="black", label=""];
+n4:e -> c10:p8:w [color="black", fontcolor="black", label=""];
+n4:e -> c13:p8:w [color="black", fontcolor="black", label=""];
+n5:e -> x0:s0:w [color="black", fontcolor="black", label=""];
+n5:e -> x1:s0:w [color="black", fontcolor="black", label=""];
+n5:e -> x2:s0:w [color="black", fontcolor="black", label=""];
+n5:e -> x3:s0:w [color="black", fontcolor="black", label=""];
+n6:e -> c13:p12:w [color="black", fontcolor="black", label=""];
+c13:p9:e -> n7:w [color="black", fontcolor="black", label=""];
+}

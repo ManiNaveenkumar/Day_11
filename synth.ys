@@ -1,0 +1,3 @@
+read_verilog pair.v
+prep -top pair
+show -format svg -prefix pair_map
